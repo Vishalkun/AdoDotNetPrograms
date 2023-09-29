@@ -166,5 +166,15 @@ namespace ADOnetDemo
                 }
             }
         }
+        public static void update_data()
+        {
+            string query = @"update CustomerData set city='Hyderabad' where Name='Vishal'";
+            SqlCommand cmd = new SqlCommand(query, con);
+            con.Open();
+            cmd.ExecuteNonQuery();
+            Console.WriteLine("--------------------");
+            Console.WriteLine("data updated successfully");
+            con.Close();
+        }
     }
 }

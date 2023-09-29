@@ -15,7 +15,8 @@
             //CustomerOperations.InsertUsingStoredProcedure(model);
             //  Console.WriteLine("welcome to ADO .net Assignment");
             //CustomerOperations.get_emp_in_date_range();
-            CustomerOperations.InsertData();
+            //CustomerOperations.InsertData();
+            CustomerOperations.update_data();
         }
-    }
-}
+
+    }  }
