@@ -41,7 +41,7 @@ namespace ADOnetDemo
         }
         public static void InsertData()
         {
-            string query = "insert into  Customer values(1,'vishal','mumbai',1223234)";
+            string query = "insert into  CustomerData values('vishal','mumbai',1223234)";
             SqlCommand cmd = new SqlCommand(query, con);
             con.Open();
             cmd.ExecuteNonQuery();
