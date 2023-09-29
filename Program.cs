@@ -5,7 +5,7 @@
         static void Main(string[] args)
         {
            // CustomerOperations.createdatabase();
-            CustomerOperations.CreateTable();
+           // CustomerOperations.CreateTable();
             //CustomerModel model = new CustomerModel();
             /*model.Name = "Test";
             model.city = "Mumbai";
@@ -13,6 +13,8 @@
             //CustomerOperations.InsertUsingStoredProcedure(model);
 
             //CustomerOperations.InsertUsingStoredProcedure(model);
+            Console.WriteLine("welcome to ADO .net Assignment");
+            CustomerOperations.get_emp_in_date_range();
         }
     }
 }

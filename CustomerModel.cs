@@ -12,5 +12,8 @@ namespace ADOnetDemo
         public string Name { get; set; }
         public string city { get; set; }
         public long phone { get; set; }
+        public int salary { get; set; }
+
+        public DateTime start_date { get; set; }
     }
 }

@@ -109,7 +109,7 @@ namespace ADOnetDemo
         }
         public static void DisplayUsingInsert(CustomerModel model)
         {
-            using (con) 
+            using (con)
             {
 
                 SqlCommand cmd = new SqlCommand("Display", con);
@@ -132,9 +132,38 @@ namespace ADOnetDemo
                 }
 
 
+
                 Console.WriteLine("Data Inserted successfully");
                 Console.WriteLine("---------------------------");
                 con.Close();
+            }
+        }
+        public static void get_emp_in_date_range()
+        {
+            using (con)
+            {
+                CustomerModel employee = new CustomerModel();
+
+                string query = @"select * from CustomerData where START_DATE between CAST('2019-01-01' as date) and getdate()";
+
+                SqlCommand cmd = new SqlCommand(query, con);
+                con.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    Console.WriteLine("-----data-----");
+                    while (reader.Read())
+                    {
+                        employee.Id = Convert.ToInt32(reader["EMP_ID"]);
+                        employee.Name = Convert.ToString(reader["EMP_NAME"]);
+                        employee.phone = Convert.ToInt64(reader["PHONE_NUM"]);
+                        employee.city = Convert.ToString(reader["CITY"]);
+                        employee.salary = Convert.ToInt32(reader["SALARY"]);
+                        employee.start_date = Convert.ToDateTime(reader["START_DATE"]);
+
+                        Console.WriteLine("{0}\n{1}\n{2}\n{3}\n{4}\n{5}\n", employee.Id, employee.Name, employee.phone, employee.city, employee.salary, employee.start_date);
+                    }
+                }
             }
         }
     }
